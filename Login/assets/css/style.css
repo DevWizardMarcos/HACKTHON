@@ -1,0 +1,106 @@
+/* fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: #000000;
+    --secondColor: #ffffff;
+    --primaryRed: #a40409;
+
+}
+
+
+body {
+    background-color: var(--primaryColor);
+    color: var(--secondColor)
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 0.80rem;
+    border-bottom: 5px solid var(--primaryRed);
+    animation:neon var(--primaryRed) infinite;
+    box-shadow: 0 0 18px var(--primaryRed);
+    box-shadow: 0 0 8px var(--primaryRed);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 8px var(--primaryRed);
+    }
+
+    50% {
+        box-shadow: 0 0 24px var(--primaryRed);
+    }
+}
+
+
+header img {
+    position: relative;
+    top: 0.6rem;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vw;
+}
+
+
+
+
+#avatarLogin{
+    max-width: 900px;
+    position: relative;
+    top: 1rem;
+}
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.conecte-se {
+    font-size: 2.2rem;
+    border-bottom: 4px solid var(--primaryRed);
+    width: fit-content;
+    font-weight: bold;
+    padding-bottom: 2px;
+    padding-right: 8px;    
+    font-family: "Raleway", sans-serif;
+    display:block;
+}
+
+form label{
+    position: relative;
+    top: 1rem;
+    left: 0.4rem;
+}
+
+
+form input {
+    padding: 12px 4rem;
+    border-radius: 2rem;
+    outline: none;
+    box-shadow:0 0 18px rgb(255, 17, 17); ;
+    border: solid;
+    border-bottom: 0.4rem solid var(--primaryRed);
+}
