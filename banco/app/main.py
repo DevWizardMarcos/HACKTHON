@@ -1,11 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from database import Base, engine, SessionLocal
-from models import Usuario
-import schemas
-import crud
-from auth import verificar_senha
+from .database import Base, engine, SessionLocal
+from .models import Usuario
+from . import schemas, crud
+from .auth import verificar_senha
 
 app = FastAPI(title="API de Cadastro e Login")
 

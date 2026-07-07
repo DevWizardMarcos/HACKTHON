@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models import Usuario
-from auth import gerar_hash
+from .models import Usuario
+from .auth import gerar_hash
 
 def criar_usuario(db: Session, usuario):
 
