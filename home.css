@@ -1,0 +1,152 @@
+:root {
+    --laranja: #C64132;
+    --corFonte: #ffff;
+    --bg: #000000;
+    --fontFamily: "Raleway", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.site-header {
+    /* border: 1px solid red; */
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #000000;
+    font-family: "Raleway", sans-serif;
+
+}
+
+.site-header .logo span#school{
+    color: var(--corFonte);
+    font-weight: bolder;
+}
+
+.site-header .logo span#in {
+    background: var(--laranja);
+    padding: 6px;
+    color: var(--corFonte);
+    font-weight: bolder;
+}
+
+.menu-nav {
+    /* border: 1px solid red; */
+    width: 30%;
+}
+
+.menu-nav ul {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.menu-nav ul a {
+    color: var(--corFonte);
+    text-decoration: none;
+    position: relative;
+}
+
+.menu-nav ul a:hover {
+    color: #C64132;
+}
+
+
+.buttons {
+    /* border: 1px solid red; */
+    width: 15%;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons #login, #cadastro {
+    font-family: "Raleway", sans-serif;
+    padding: 6px 20px;
+    /* background: var(--laranja); */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons #login {
+    background-color: transparent;
+    border: 1px solid white;
+    transition: ease-in-out 0.2s;
+}
+
+#login:hover {
+    background: var(--laranja);
+    border: 1px solid var(--laranja);
+    box-shadow: 0px 0px 20px var(--laranja);
+}
+
+.buttons #cadastro {
+    background-color: var(--laranja);
+    transition: ease-in-out 0.2s;
+}
+
+.buttons #cadastro:hover {
+    box-shadow: 0px 0px 10px var(--laranja);
+}
+
+
+.banner {
+    /* border: 1px solid red; */
+    min-height: 432px;
+    color: var(--corFonte);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* line-height: 2; */
+    background-image: url('assets/techBoy.png');
+    background-size: cover;
+    object-position: center;
+}
+
+.banner h1 {
+    font-size: 64px;
+    width: 743px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.banner h3 {
+    /* border: 1px solid red; */
+    width: 600px;
+    height: 80px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+#comecar {
+    font-family: "Raleway", sans-serif;
+    margin-top: 3%;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.explorar .title-explorar {
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: 50px;
+    background-color: var(--bg);
+    color: var(--corFonte);
+    font-family: var(--fontFamily);
+    font-weight: 700;
+    padding: 10px;
+}
