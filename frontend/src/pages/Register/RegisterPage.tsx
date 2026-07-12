@@ -9,7 +9,7 @@ const schema = z
     email: z.string().email('Informe um e-mail válido.'),
     password: z.string().min(8, 'A senha precisa ter ao menos 8 caracteres.'),
     confirmPassword: z.string().min(8, 'Confirme a sua senha.'),
-    terms: z.literal(true, { errorMap: () => ({ message: 'Aceite os termos para continuar.' }) }),
+    terms: z.boolean().refine((value) => value, 'Aceite os termos para continuar.'),
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ['confirmPassword'],
