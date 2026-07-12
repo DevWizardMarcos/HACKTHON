@@ -1,0 +1,23 @@
+# Ambiente virtual
+.venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Banco de dados SQLite
+*.db
+
+# Arquivos de ambiente
+.env
+
+# Configurações do VS Code
+.vscode/
+
+# Cache de testes
+.pytest_cache/
+
+# Arquivos de distribuição
+build/
+dist/
+*.egg-info/
