@@ -1,0 +1,219 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: #000000;
+    --secondColor: #ffffff;
+    --primaryRed: #a40409;
+    --buttonRed: #cd5240;
+    --inputGray: #d9d9d9;
+}
+
+body {
+    background-color: var(--primaryColor);
+    color: var(--secondColor);
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ---------- header ---------- */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem;
+    border-bottom: 4px solid var(--primaryRed);
+    box-shadow: 0 0 8px var(--primaryRed);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 8px var(--primaryRed);
+    }
+
+    50% {
+        box-shadow: 0 0 24px var(--primaryRed);
+    }
+}
+
+header img {
+    position: relative;
+    top: 0.4rem;
+    max-height: 66px;
+}
+
+/* ---------- main ---------- */
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: relative;
+}
+
+#avatarLogin {
+    /* width: 800px; */
+    align-self: center;
+    margin-bottom: -2px;
+    position: relative;
+    /* bottom: 8rem; */
+}
+
+/* ---------- form ---------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 300px;
+    align-self: center;
+    padding-bottom: 3rem;
+}
+
+.conecte-se {
+    font-size: 2.4rem;
+    font-weight: bold;
+    border-bottom: 4px solid var(--primaryRed);
+    width: fit-content;
+    padding-bottom: 4px;
+    padding-right: 10px;
+    align-self: center;
+    margin-bottom: 0.6rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-left: 0.6rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 2rem;
+    border: 2px solid var(--primaryRed);
+    background-color: var(--inputGray);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 17, 17, 0.8);
+    font-size: 1rem;
+}
+
+/* input de senha com olhinho */
+
+.senha-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.senha-wrapper input {
+    padding-right: 44px;
+}
+
+#toggleSenha {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* links */
+
+.sessaolign {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+}
+
+.sessaolign a {
+    color: var(--secondColor);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sessaolign a:hover {
+    text-decoration: underline;
+}
+
+/* botão login */
+
+#login {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background-color: var(--buttonRed);
+    color: var(--secondColor);
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    font-family: inherit;
+}
+
+#login:hover {
+    filter: brightness(1.1);
+}
+
+/* ou + redes sociais */
+
+.ou {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--secondColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-btn:hover {
+    transform: scale(1.08);
+}
+
+/* ---------- responsivo ---------- */
+
+@media (max-width: 900px) {
+    #avatarLogin {
+        display: none;
+    }
+
+    main {
+        justify-content: center;
+    }
+}
