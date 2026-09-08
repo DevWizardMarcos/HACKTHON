@@ -1,0 +1,32 @@
+@import url("autenticacao.css");
+
+/* Proporcoes do modelo de 1100 x 674, com escala pela viewport. */
+:root { --u: min(0.090909vw, 0.148368svh); }
+body { min-height: 100svh; display: flex; flex-direction: column; }
+header { height: calc(70 * var(--u)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-bottom: 2px solid #a40409; animation: none; box-shadow: none; }
+header img { display: block; width: calc(174 * var(--u)); height: auto; }
+main { position: relative; flex: 1; width: min(100%, calc(1100 * var(--u))); min-height: calc(604 * var(--u)); margin-inline: auto; overflow: hidden; }
+/* A ilustracao fica limitada a sua coluna, abaixo do cabecalho. */
+.avatar-area { position: absolute; inset: 0 auto 0 0; width: 56%; overflow: hidden; pointer-events: none; user-select: none; }
+.avatar-area img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+form { position: relative; z-index: 1; display: flex; flex-direction: column; }
+h1 { width: fit-content; font-size: calc(30 * var(--u)); line-height: 1.2; border-bottom: 3px solid #a40409; padding-bottom: calc(3 * var(--u)); }
+.campo { display: flex; flex-direction: column; gap: calc(5 * var(--u)); }
+.campo label { margin-left: calc(5 * var(--u)); font-size: calc(15 * var(--u)); line-height: 1.2; }
+.campo input { height: calc(48 * var(--u)); padding: 0 calc(12 * var(--u)); border: 2px solid #b0080b; border-radius: calc(17 * var(--u)); background: #c4c4c4; box-shadow: none; font-size: calc(18 * var(--u)); }
+.senha-wrapper input { padding-right: calc(44 * var(--u)); }
+.toggle-senha, #toggleSenha { right: calc(5 * var(--u)); width: calc(40 * var(--u)); height: 100%; }
+.toggle-senha svg, #toggleSenha svg { width: calc(28 * var(--u)); height: calc(28 * var(--u)); }
+button[type="submit"] { align-self: center; border: 0; border-radius: calc(18 * var(--u)); background: #ca3f2e; color: white; font: 700 calc(18 * var(--u)) "Raleway", Arial, sans-serif; cursor: pointer; }
+button[type="submit"]:hover { filter: brightness(1.1); }
+
+@media (max-width: 500px) {
+  :root { --u: 1px; }
+  header { height: 64px; }
+  main { width: 100%; min-height: auto; display: flex; align-items: center; justify-content: center; padding: 32px 24px; }
+  .avatar-area { display: none; }
+  main form { width: 100%; max-width: 340px; margin: 0; padding: 0; }
+  .campo input { min-height: 44px; }
+  .toggle-senha, #toggleSenha { width: 44px; }
+  button[type="submit"] { min-height: 44px; }
+}

@@ -1,0 +1,177 @@
+@import url("../../../assets/css/autenticacao.css");
+
+/* As duas etapas compartilham o mesmo layout. */
+.cabecalho-recuperacao {
+  height: clamp(57px, 7vw, 73px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid var(--cor-borda-autenticacao);
+}
+
+.cabecalho-recuperacao img {
+  display: block;
+  width: clamp(145px, 18vw, 187px);
+  height: auto;
+  transform: translateY(3px);
+}
+
+.conteudo-recuperacao {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1440px;
+  min-height: max(505px, calc(100svh - clamp(57px, 7vw, 73px)));
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.conteudo-recuperacao::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  width: 64%;
+  height: 100%;
+  /* background: radial-gradient(ellipse at 48% 43%, #652018 0%, #2b0c08 34%, transparent 70%); */
+  pointer-events: none;
+}
+
+.avatar-recuperacao {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  pointer-events: none;
+  user-select: none;
+}
+
+.formulario-recuperacao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: clamp(220px, 27.3vw, 284px);
+  min-width: 0;
+  margin-left: 61%;
+  padding-top: clamp(68px, 8.5vw, 88px);
+  padding-bottom: 48px;
+}
+
+.titulo-recuperacao {
+  align-self: flex-start;
+  margin: 0 0 clamp(35px, 4.6vw, 48px) 5px;
+  padding-right: 16px;
+  border-bottom: 4px solid var(--cor-borda-autenticacao);
+  font-size: clamp(22px, 2.7vw, 28px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.instrucao-recuperacao {
+  margin: 0 0 30px 5px;
+  font-size: clamp(15px, 1.85vw, 19px);
+  line-height: 1.4;
+  width: max-content;
+  max-width: calc(100vw - 61vw - 24px);
+}
+
+.formulario-recuperacao .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formulario-recuperacao .campo + .campo { margin-top: 24px; }
+
+.formulario-recuperacao label {
+  margin-left: 5px;
+  font-size: clamp(15px, 1.85vw, 19px);
+  line-height: 1.35;
+}
+
+.campo-email-recuperacao label { font-weight: 700; }
+
+.formulario-recuperacao input {
+  height: clamp(38px, 4.6vw, 48px);
+  padding-inline: 12px;
+  min-width: 0;
+  font-size: 16px;
+}
+
+.formulario-recuperacao .senha-wrapper input { padding-right: 44px; }
+
+.botao-enviar-recuperacao {
+  align-self: flex-start;
+  min-width: clamp(130px, 16vw, 166px);
+  min-height: 35px;
+  margin: 28px 0 0 5px;
+  padding: 5px 24px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--cor-botao-autenticacao);
+  color: var(--cor-texto-autenticacao);
+  font: 700 clamp(16px, 1.9vw, 20px) "Raleway", Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.botao-enviar-recuperacao:hover { background: #df4a37; }
+
+.mensagem-recuperacao {
+  margin: 20px 5px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (min-width: 701px) and (max-width: 780px) {
+  .formulario-recuperacao { margin-left: auto; margin-right: 32px; }
+}
+
+@media (max-width: 700px) {
+  .conteudo-recuperacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100svh - 57px);
+    padding-inline: 24px;
+  }
+
+  .conteudo-recuperacao::before { width: 100%; opacity: 0.4; }
+
+  .avatar-recuperacao {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    width: max(600px, 110%);
+    height: auto;
+    transform: translateX(-50%);
+    opacity: 0.16;
+  }
+
+  .formulario-recuperacao {
+    width: 100%;
+    max-width: 360px;
+    margin: 0;
+    padding-block: 48px;
+  }
+
+  .titulo-recuperacao { font-size: 26px; margin-bottom: 36px; }
+  .instrucao-recuperacao { width: auto; max-width: 100%; font-size: 16px; }
+  .formulario-recuperacao label { font-size: 18px; }
+  .formulario-recuperacao input { height: 50px; }
+  .botao-enviar-recuperacao { min-height: 44px; font-size: 18px; }
+}
+
+@media (max-height: 500px) {
+  .formulario-recuperacao { padding-block: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .botao-enviar-recuperacao { transition: none; }
+}
