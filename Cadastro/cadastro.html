@@ -14,17 +14,17 @@
     </header>
 
     <main>
-      <img
+      <div class="avatar-area"><img
         src="assets/img/AvatarCadastrase.png"
         alt="avatar cadastro"
         id="avatarCadastro"
-      />
+      /></div>
 
       <form action="" method="get">
-        <h1 class="titulo">Cadastre - se</h1>
+        <h1 class="titulo">Cadastre-se</h1>
 
         <div class="campo">
-          <label for="nomeCompleto">Digite seu nome</label>
+          <label for="nomeCompleto">Nome Completo</label>
           <input
             type="text"
             name="nomeCompleto"
@@ -34,12 +34,16 @@
         </div>
 
         <div class="campo">
-          <label for="email">Digite seu e-mail</label>
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" inputmode="numeric" maxlength="14" />
+        </div>
+        <div class="campo">
+          <label for="email">Email</label>
           <input type="email" name="email" id="email" autocomplete="email" />
         </div>
 
         <div class="campo">
-          <label for="senha">Sua senha</label>
+          <label for="senha">Senha</label>
           <div class="senha-wrapper">
             <input
               type="password"

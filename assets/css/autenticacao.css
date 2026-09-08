@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap");
+
+/* Base visual das telas de autenticação. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --cor-fundo-autenticacao: #000;
+  --cor-texto-autenticacao: #fff;
+  --cor-borda-autenticacao: #a40409;
+  --cor-botao-autenticacao: #ca3f2e;
+  --cor-campo-autenticacao: #c4c4c4;
+  /* Compatibilidade com os nomes usados no login e cadastro. */
+  --primaryColor: var(--cor-fundo-autenticacao);
+  --secondColor: var(--cor-texto-autenticacao);
+  --primaryRed: var(--cor-borda-autenticacao);
+  --buttonRed: var(--cor-botao-autenticacao);
+  --inputGray: var(--cor-campo-autenticacao);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--cor-fundo-autenticacao);
+  color: var(--cor-texto-autenticacao);
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 8px var(--cor-borda-autenticacao);
+  animation: pulsar-borda-autenticacao 1.5s infinite;
+}
+
+@keyframes pulsar-borda-autenticacao {
+  0%, 100% { box-shadow: 0 0 8px var(--cor-borda-autenticacao); }
+  50% { box-shadow: 0 0 24px var(--cor-borda-autenticacao); }
+}
+
+.campo input {
+  width: 100%;
+  border: 6px solid transparent;
+  border-radius: 28px;
+  background:
+    linear-gradient(var(--inputGray), var(--inputGray)) padding-box,
+    linear-gradient(
+      180deg,
+      #390303 0%,
+      #790606 22%,
+      #b0080b 55%,
+      #990609 80%,
+      #590304 100%
+    ) border-box;
+  color: #111;
+  box-shadow:
+    0 -2px 5px rgb(95 0 0 / 20%),
+    0 2px 3px rgb(0 0 0 / 65%),
+    inset 0 1px 2px rgb(0 0 0 / 16%);
+  font: 18px "Raleway", Arial, sans-serif;
+}
+
+.senha-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.senha-wrapper input { padding-right: 44px; }
+
+.toggle-senha,
+#toggleSenha {
+  position: absolute;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toggle-senha[aria-pressed="true"] svg line { display: none; }
+
+.campo input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--cor-texto-autenticacao);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header { animation: none; }
+}

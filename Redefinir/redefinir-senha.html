@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redefinir senha | Infinity School</title>
+    <link rel="stylesheet" href="assets/css/recuperacao-senha.css" />
+    <script src="assets/js/recuperacao-senha.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecalho-recuperacao">
+      <nav aria-label="Página de login">
+        <a href="../Login/login.html" aria-label="Infinity School - voltar ao login">
+          <img src="../Login/assets/img/Logo padrão 1.png" alt="Infinity School" />
+        </a>
+      </nav>
+    </header>
+
+    <main class="conteudo-recuperacao">
+      <img src="imagem da mulher.png" alt="" class="avatar-recuperacao" />
+      <form class="formulario-recuperacao" id="formularioRedefinirSenha" data-etapa="redefinir" aria-labelledby="tituloRecuperacao" method="post">
+        <h1 class="titulo-recuperacao" id="tituloRecuperacao">Redefinir Senha</h1>
+        <div class="campo">
+          <label for="novaSenha">Nova senha</label>
+          <div class="senha-wrapper">
+            <input type="password" name="novaSenha" id="novaSenha" autocomplete="new-password" required />
+            <button type="button" class="toggle-senha" aria-label="Mostrar nova senha" aria-controls="novaSenha" aria-pressed="false">
+              <svg aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"
+                />
+                <path
+                  d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"
+                />
+                <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                <line x1="1" y1="1" x2="23" y2="23" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="confirmarNovaSenha">Confirmar senha</label>
+          <div class="senha-wrapper">
+            <input type="password" name="confirmarNovaSenha" id="confirmarNovaSenha" autocomplete="new-password" required />
+            <button type="button" class="toggle-senha" aria-label="Mostrar confirmar senha" aria-controls="confirmarNovaSenha" aria-pressed="false">
+              <svg aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"
+                />
+                <path
+                  d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"
+                />
+                <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+                <line x1="1" y1="1" x2="23" y2="23" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button class="botao-enviar-recuperacao" type="submit">Enviar</button>
+        <p class="mensagem-recuperacao" role="status" aria-live="polite" hidden></p>
+      </form>
+    </main>
+  </body>
+</html>
