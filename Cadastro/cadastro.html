@@ -20,7 +20,7 @@
         id="avatarCadastro"
       /></div>
 
-      <form action="" method="get">
+      <form action="" method="post">
         <h1 class="titulo">Cadastre-se</h1>
 
         <div class="campo">
@@ -124,19 +124,8 @@
       </form>
     </main>
 
-    <script>
-      document.querySelectorAll(".toggle-senha").forEach((botao) => {
-        botao.addEventListener("click", () => {
-          const input = botao.parentElement.querySelector("input");
-          const mostrar = input.type === "password";
-          input.type = mostrar ? "text" : "password";
-          botao.setAttribute(
-            "aria-label",
-            mostrar ? "Ocultar senha" : "Mostrar senha",
-          );
-          botao.setAttribute("aria-pressed", String(mostrar));
-        });
-      });
-    </script>
+    <script src="assets/js/script.js"></script>
+  <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/form-auth.js"></script>
   </body>
 </html>
