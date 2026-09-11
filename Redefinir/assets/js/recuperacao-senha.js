@@ -25,16 +25,38 @@ function validarConfirmacaoSenha() {
 novaSenha?.addEventListener("input", validarConfirmacaoSenha);
 confirmarNovaSenha?.addEventListener("input", validarConfirmacaoSenha);
 
-formularioRecuperacao.addEventListener("submit", (evento) => {
+if (novaSenha) novaSenha.minLength = 8;
+const tokenRecuperacao = new URLSearchParams(location.search).get("token");
+if (tokenRecuperacao) history.replaceState(null, "", location.pathname);
+
+formularioRecuperacao.addEventListener("submit", async (evento) => {
   evento.preventDefault();
   validarConfirmacaoSenha();
   if (!formularioRecuperacao.reportValidity()) return;
-
-  // Substituir este aviso pela chamada à API quando a integração estiver pronta.
-  // A redefinição real também deve validar o token recebido pelo link do e-mail.
   const mensagem = formularioRecuperacao.querySelector(".mensagem-recuperacao");
-  mensagem.textContent = formularioRecuperacao.dataset.etapa === "recuperar"
-    ? "O envio de recuperação ainda não está disponível."
-    : "A alteração de senha ainda não está disponível.";
+  const botao = formularioRecuperacao.querySelector('button[type="submit"]');
+  botao.disabled = true;
   mensagem.hidden = false;
+  mensagem.textContent = "Aguarde...";
+  try {
+    const recuperar = formularioRecuperacao.dataset.etapa === "recuperar";
+    if (!recuperar && !tokenRecuperacao) {
+      throw new Error("Link inválido. Solicite um novo e-mail de recuperação.");
+    }
+    const resultado = await api(recuperar ? "/recuperar-senha" : "/redefinir-senha",
+      recuperar ? { email: document.getElementById("emailRecuperacao").value }
+        : { token: tokenRecuperacao, senha: novaSenha.value });
+    mensagem.textContent = resultado.mensagem;
+    formularioRecuperacao.reset();
+    if (!recuperar) {
+      const link = document.createElement("a");
+      link.href = "../Login/login.html";
+      link.textContent = " Ir para o login";
+      mensagem.append(link);
+    }
+  } catch (erro) {
+    mensagem.textContent = erro.message;
+  } finally {
+    botao.disabled = false;
+  }
 });
