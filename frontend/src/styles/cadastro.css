@@ -1,0 +1,24 @@
+/* Estilos só da tela de Cadastro (escopados, como no login.css). */
+.pagina-cadastro { display: contents; }
+
+:where(.pagina-cadastro) .avatar-area { width: 64%; }
+:where(.pagina-cadastro) #avatarCadastro { object-fit: cover; object-position: center bottom; }
+:where(.pagina-cadastro) main::before {
+  content: "";
+  position: absolute;
+  inset: 0 36% 0 0;
+  background: radial-gradient(ellipse at 52% 43%, #742017 0%, #2b0905 25%, transparent 58%);
+}
+:where(.pagina-cadastro) form {
+  width: calc(318 * var(--u));
+  margin-left: 65.5%;
+  padding-top: calc(34 * var(--u));
+  padding-bottom: calc(36 * var(--u));
+}
+:where(.pagina-cadastro) .titulo { padding-right: calc(25 * var(--u)); margin: 0 0 calc(25 * var(--u)) calc(5 * var(--u)); }
+:where(.pagina-cadastro) .campo + .campo { margin-top: calc(12 * var(--u)); }
+:where(.pagina-cadastro) #btnCadastro { margin-top: calc(24 * var(--u)); width: calc(192 * var(--u)); height: calc(36 * var(--u)); }
+
+@media (max-width: 500px) {
+  :where(.pagina-cadastro) main::before { display: none; }
+}
