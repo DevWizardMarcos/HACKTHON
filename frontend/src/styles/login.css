@@ -1,0 +1,45 @@
+/* Estilos só da tela de Login. O :where() mantém a especificidade baixa,
+   igual ao CSS original, para o responsivo do auth.css continuar valendo. */
+.pagina-login { display: contents; }
+
+:where(.pagina-login) #avatarLogin { object-fit: contain; object-position: center bottom; }
+:where(.pagina-login) form {
+  width: calc(250 * var(--u));
+  margin-left: 59%;
+  padding-top: calc(86 * var(--u));
+  padding-bottom: calc(50 * var(--u));
+  gap: calc(18 * var(--u));
+}
+:where(.pagina-login) .conecte-se { margin: 0 0 calc(20 * var(--u)) calc(5 * var(--u)); }
+:where(.pagina-login) .campo label { font-size: calc(11 * var(--u)); }
+:where(.pagina-login) .campo input { height: calc(35 * var(--u)); }
+:where(.pagina-login) .toggle-senha svg { width: calc(22 * var(--u)); height: calc(22 * var(--u)); }
+:where(.pagina-login) .sessaolign {
+  display: flex;
+  justify-content: space-between;
+  width: calc(290 * var(--u));
+  align-self: center;
+  margin-top: calc(10 * var(--u));
+}
+:where(.pagina-login) .sessaolign a { color: #fff; text-decoration: none; font-size: calc(14 * var(--u)); }
+:where(.pagina-login) .sessaolign a:hover { text-decoration: underline; }
+:where(.pagina-login) #login { width: calc(206 * var(--u)); height: calc(37 * var(--u)); margin-top: calc(15 * var(--u)); }
+:where(.pagina-login) .ou { text-align: center; font-size: calc(24 * var(--u)); font-weight: 700; margin-top: calc(8 * var(--u)); }
+:where(.pagina-login) .social { display: flex; justify-content: center; gap: calc(12 * var(--u)); margin-top: calc(-5 * var(--u)); }
+:where(.pagina-login) .social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(44 * var(--u));
+  height: calc(44 * var(--u));
+  border: 0;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+:where(.pagina-login) .social-btn svg { width: calc(30 * var(--u)); height: calc(30 * var(--u)); }
+
+@media (max-width: 500px) {
+  :where(.pagina-login) .campo label { font-size: 14px; }
+  :where(.pagina-login) .sessaolign { width: 100%; gap: 12px; }
+}
