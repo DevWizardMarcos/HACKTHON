@@ -10,6 +10,8 @@ export default defineConfig({
       '/api': {
         target: 'http://127.0.0.1:8000',
         changeOrigin: true,
+        // O backend recusa POSTs de outra origem; em dev fingimos ser a mesma.
+        headers: { Origin: 'http://127.0.0.1:8000' },
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },

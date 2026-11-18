@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate,useSearchParams } from 'react-router-dom'
 import avatarLogin from '../assets/img/avatar-login.png'
 import AuthLayout from '../components/AuthLayout'
 import CampoSenha from '../components/CampoSenha'
@@ -7,6 +7,7 @@ import { login } from '../services/auth'
 import '../styles/login.css'
 
 export default function Login() {
+  const navigate = useNavigate()
   const [params] = useSearchParams()
   const [identificador, setIdentificador] = useState('')
   const [senha, setSenha] = useState('')
@@ -19,15 +20,17 @@ export default function Login() {
     e.preventDefault()
     setCarregando(true)
     setMensagem('Aguarde...')
-    try {
-      const resultado = await login(identificador, senha)
-      setSenha('')
-      setMensagem(`${resultado.mensagem} Bem-vindo(a), ${resultado.usuario.nome}!`)
-    } catch (erro) {
-      setMensagem(erro instanceof Error ? erro.message : 'Erro inesperado.')
-    } finally {
+      try{
+      await login(identificador, senha)
+      navigate('/inicio')
+    } catch(erro){
+      setMensagem(erro instanceof Error ? erro.message : 'Erro inesperado !')
       setCarregando(false)
     }
+
+
+
+
   }
 
   function loginSocial() {
